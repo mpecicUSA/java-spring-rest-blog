@@ -23,11 +23,11 @@ public class Author {
     @JsonIgnore
     private String password;
     @OneToMany
-    private List<Post> post;
+    private List<Post> posts;
 
     public Author() {
         super();
-        post = new ArrayList<>();
+        posts = new ArrayList<>();
     }
 
     public Author(String username, String firstname, String lastname, String password) {
@@ -90,11 +90,10 @@ public class Author {
     }
 
     public List<Post> getPosts() {
-        return post;
+        return posts;
     }
 
-    public void addPost(Post post) {
-        this.post.add(post);
+    public void addPost(Post post) { posts.add(post);
     }
 
 }
